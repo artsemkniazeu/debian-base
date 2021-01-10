@@ -1,0 +1,12 @@
+#!/bin/bash
+
+
+if [[ "$1" =~ ^('reset-failed'|'reload-or-restart')$ ]]
+then
+	service $2 restart
+elif [[ "$1" =~ ^('start'|'stop'|'restart'|'status')$ ]]
+then
+	service $2 $1
+else
+	systemctl-replacement $*
+fi

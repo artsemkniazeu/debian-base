@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+
+for i in $(find /etc/my_init.d/ -type f -name '*.sh')
+  do bash "$i"
+done
